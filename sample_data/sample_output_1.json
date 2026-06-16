@@ -1,0 +1,88 @@
+{
+  "id": 1,
+  "url": "https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/",
+  "title": "Grilled Cheese Sandwich",
+  "cuisine": "American",
+  "difficulty": "Easy",
+  "prep_time": "5 mins",
+  "cook_time": "15 mins",
+  "total_time": "20 mins",
+  "servings": "1 serving",
+  "ingredients": [
+    {
+      "quantity": "4",
+      "unit": "slices",
+      "item": "white bread"
+    },
+    {
+      "quantity": "3",
+      "unit": "tablespoons",
+      "item": "butter, divided"
+    },
+    {
+      "quantity": "2",
+      "unit": "slices",
+      "item": "Cheddar cheese"
+    }
+  ],
+  "instructions": [
+    "Preheat skillet over medium heat.",
+    "Butter one side of one slice of bread. Place bread butter-side-down onto skillet bottom and add 1 slice of cheese.",
+    "Butter a second slice of bread on one side and place butter-side-up on top of sandwich.",
+    "Grill until lightly browned and flip over; continue grilling until cheese is melted.",
+    "Repeat with remaining ingredients for second sandwich."
+  ],
+  "nutrition": {
+    "calories": "380 kcal",
+    "protein": "10g",
+    "carbs": "30g",
+    "fat": "24g"
+  },
+  "substitutions": [
+    {
+      "original": "butter",
+      "substitute": "olive oil",
+      "note": "Use 3/4 the amount of olive oil instead of butter for a healthier alternative."
+    },
+    {
+      "original": "white bread",
+      "substitute": "whole wheat bread",
+      "note": "Provides more fiber and nutrients."
+    },
+    {
+      "original": "Cheddar cheese",
+      "substitute": "vegan cheese slice",
+      "note": "Makes the sandwich suitable for dairy-free diets."
+    }
+  ],
+  "shopping_list": {
+    "dairy": [
+      "3 tablespoons butter",
+      "2 slices Cheddar cheese"
+    ],
+    "produce": [],
+    "pantry": [
+      "4 slices white bread"
+    ],
+    "meat": [],
+    "other": []
+  },
+  "related_recipes": [
+    {
+      "title": "Tomato Soup",
+      "description": "The perfect companion for a hot grilled cheese sandwich.",
+      "estimated_time": "25 mins"
+    },
+    {
+      "title": "Ham and Cheese Melt",
+      "description": "Upgrade your grilled cheese with sliced honey ham.",
+      "estimated_time": "15 mins"
+    },
+    {
+      "title": "Garlic Bread Grilled Cheese",
+      "description": "Infuse the bread with garlic butter for extra flavor.",
+      "estimated_time": "20 mins"
+    }
+  ],
+  "created_at": "2026-06-16T12:00:00Z"
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Extractor & Meal Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Recipe Extractor &amp; Meal Planner</h1>
+        </header>
+
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="extract">Extract Recipe</button>
+            <button class="tab-btn" data-tab="saved">Saved Recipes</button>
+        </div>
+
+        <main class="main-content">
+            <!-- TAB 1: EXTRACT RECIPE -->
+            <section id="tab-extract" class="tab-content active">
+                <div class="url-input-container">
+                    <input type="text" id="recipe-url" placeholder="https://www.allrecipes.com/recipe/23891/grilled-cheese-sandwich/">
+                    <button id="extract-btn" class="btn-primary">Extract Recipe</button>
+                </div>
+
+                <div id="extraction-loader" class="loader hidden">
+                    <i class="fa-solid fa-circle-notch fa-spin"></i> Extracting recipe details...
+                </div>
+
+                <div id="error-card" class="error-card hidden">
+                    <div class="error-header">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Extraction Failed</span>
+                    </div>
+                    <p id="error-message"></p>
+                </div>
+
+                <div id="recipe-results" class="recipe-results-container hidden">
+                    <div class="recipe-card summary-card" id="res-hero"></div>
+                    <div class="details-grid">
+                        <div class="grid-main">
+                            <div class="recipe-card">
+                                <h3>Ingredients</h3>
+                                <ul class="ingredients-list" id="res-ingredients"></ul>
+                            </div>
+                            <div class="recipe-card">
+                                <h3>Instructions</h3>
+                                <ol class="instructions-list" id="res-instructions"></ol>
+                            </div>
+                        </div>
+                        <div class="grid-side">
+                            <div class="recipe-card">
+                                <h3>Nutrition Estimates (Per Serving)</h3>
+                                <div class="nutrition-grid" id="res-nutrition"></div>
+                            </div>
+                            <div class="recipe-card">
+                                <h3>Healthy Substitutions</h3>
+                                <ul class="substitutions-list" id="res-substitutions"></ul>
+                            </div>
+                            <div class="recipe-card">
+                                <h3>Shopping List</h3>
+                                <div class="shopping-categories" id="res-shopping-list"></div>
+                            </div>
+                            <div class="recipe-card">
+                                <h3>Related Recipes</h3>
+                                <div class="related-list" id="res-related"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- TAB 2: SAVED RECIPES -->
+            <section id="tab-saved" class="tab-content">
+                <div class="saved-header">
+                    <h2>Saved Recipes</h2>
+                    <button class="btn-secondary" id="refresh-history-btn">
+                        <i class="fa-solid fa-arrows-rotate"></i> Refresh List
+                    </button>
+                </div>
+
+                <div id="meal-planner-action-bar" class="meal-planner-action-bar hidden">
+                    <div class="meal-plan-info">
+                        <i class="fa-solid fa-calendar-alt"></i>
+                        <span id="selected-recipes-count">0 recipes selected</span> (Select 2–5 to plan)
+                    </div>
+                    <button class="btn-primary" id="generate-plan-btn" disabled>Generate Meal Plan</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="saved-table">
+                        <thead>
+                            <tr>
+                                <th class="select-col">Select</th>
+                                <th>Title</th>
+                                <th>Cuisine</th>
+                                <th>Difficulty</th>
+                                <th>Date Saved</th>
+                                <th class="actions-col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="history-table-body"></tbody>
+                    </table>
+                    <div id="history-empty-state" class="empty-state hidden">
+                        <i class="fa-regular fa-folder-open"></i>
+                        <p>No saved recipes yet. Extract a recipe to get started!</p>
+                    </div>
+                </div>
+
+                <div id="meal-plan-section" class="meal-plan-section hidden">
+                    <div id="meal-plan-loader" class="loader hidden">
+                        <i class="fa-solid fa-circle-notch fa-spin"></i> Generating meal plan...
+                    </div>
+                    <div id="meal-plan-results" class="meal-plan-results-container hidden">
+                        <div class="recipe-card">
+                            <h3>Consolidated Shopping List</h3>
+                            <div class="shopping-categories" id="meal-shopping-list"></div>
+                        </div>
+                        <div class="recipe-card">
+                            <h3>Meal Prep Guidelines</h3>
+                            <ul class="tips-list" id="meal-prep-tips"></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-backdrop hidden" id="details-modal">
+        <div class="modal-container">
+            <button class="close-modal-btn" id="close-modal-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-scroll-content" id="modal-content-area"></div>
+        </div>
+    </div>
+
+    <script src="/static/app.js?v=3"></script>
+</body>
+</html>

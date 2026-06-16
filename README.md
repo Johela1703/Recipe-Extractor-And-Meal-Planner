@@ -159,48 +159,13 @@ Swagger Docs: http://127.0.0.1:8000/docs
 
 ## 2.1 Recipe Extraction
 
-Paste a recipe URL and click **Extract Recipe**.
-
-The system:
-
-* Scrapes recipe content using BeautifulSoup
-* Sends content to OpenRouter
-* Extracts structured recipe data
-* Saves recipe into PostgreSQL
-
 #### Output
 
 ![Recipe Extraction](assets/extract-recipe.png)
 
 ---
 
-## 2.2 Recipe Details View
-
-After extraction, recipe details are displayed including:
-
-* Recipe Title
-* Cuisine
-* Preparation Time
-* Ingredients
-* Instructions
-* Nutrition Information
-* Shopping List
-
-#### Output
-
-![Recipe Details](assets/recipe-details.png)
-
----
-
 ## 2.3 Backend Processing
-
-FastAPI processes extraction requests and stores recipes in PostgreSQL.
-
-Run backend:
-
-```bash
-uvicorn backend.main:app --reload
-```
 
 #### Output
 
@@ -210,29 +175,13 @@ uvicorn backend.main:app --reload
 
 ## 2.4 Saved Recipes
 
-Previously extracted recipes are stored in PostgreSQL and displayed in the Saved Recipes tab.
-
-Features:
-
-* Persistent storage
-* Recipe history
-* Detail retrieval
-
 #### Output
 
-![Saved Recipes](assets/saved-recipes.png)
+![Saved Recipes](assets/saved-recipe.png)
 
 ---
 
 ## 2.5 Meal Planner
-
-Select 2–5 saved recipes and generate a meal plan.
-
-The system generates:
-
-* Consolidated Shopping List
-* Meal Prep Guidelines
-* Ingredient Optimization Suggestions
 
 #### Output
 
